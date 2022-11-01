@@ -1,0 +1,19 @@
+<div>
+  <input [(ngModel)]="newEmployee.name" placeholder="name">
+  <input [(ngModel)]="newEmployee.role" placeholder="role">
+  <button (click)="onCreate()">Create Employee</button>
+</div>
+
+
+<h3>Managers</h3>
+<app-manager *ngFor="let manager of managers" [manager]="manager">
+
+</app-manager>
+
+
+<h3>Employees</h3>
+<app-employee *ngFor="let employee of employees" [employee]="employee">
+
+</app-employee>
+
+

@@ -1,0 +1,23 @@
+
+<div *ngIf="!isUpdating">
+  <div *ngIf="employee !== undefined">
+    <p>{{ employee.name }}  --- {{ employee.role }}</p>
+    <b *ngIf="employee.manager == true"> ♔ Manager ♔ </b>
+    <button *ngIf="employee.manager == false" (click)="onPromote()">Promote</button>
+    <button (click)="onUpdate()">Update</button>
+    <button (click)="onDelete()">Delete</button>
+  </div>
+</div>
+
+
+<div *ngIf="isUpdating">
+  <br><br>
+  <div *ngIf="employee !== undefined">
+    <input [(ngModel)]="employeeCopy.name">
+    <input [(ngModel)]="employeeCopy.role">
+    <p>{{ employee.name }}</p>
+    <p>{{ employee.role }}</p>
+    <button (click)="onCancel()">Cancel</button>
+    <button (click)="onSave()">Save</button>
+    </div>
+</div>
